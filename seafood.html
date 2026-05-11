@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المنيو | العماد إخوان رويال</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
+
+<style>
+    :root {
+        --gold: #C8952A;
+        --gold-light: #E8B84B;
+        --gold-pale: #f9f0dc;
+        --crimson: #c0392b;
+        --cream: #FAF6F0;
+        --dark: #1A1209;
+        --charcoal: #2d2416;
+        --text: #3d2e1a;
+        --text-muted: #7a6950;
+        --white: #ffffff;
+        --shadow-gold: 0 8px 40px rgba(200,149,42,0.22);
+        --shadow-dark: 0 20px 60px rgba(26,18,9,0.13);
+        --radius: 20px;
+        --radius-lg: 28px;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+        font-family: 'Tajawal', sans-serif;
+        background: var(--cream);
+        color: var(--text);
+        direction: rtl;
+        overflow-x: hidden;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+        background: linear-gradient(160deg, #5c0f0f 0%, var(--dark) 50%, #2a1800 100%);
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        padding: 50px 20px 38px;
+    }
+
+    header::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+            radial-gradient(ellipse 80% 60% at 50% 0%, rgba(200,149,42,0.13) 0%, transparent 70%),
+            radial-gradient(ellipse 60% 40% at 80% 80%, rgba(192,57,43,0.22) 0%, transparent 60%);
+        pointer-events: none;
+    }
+
+    .header-ornament {
+        position: absolute;
+        inset: 0;
+        background-image:
+            repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(200,149,42,0.03) 60px, rgba(200,149,42,0.03) 61px),
+            repeating-linear-gradient(-45deg, transparent, transparent 60px, rgba(200,149,42,0.03) 60px, rgba(200,149,42,0.03) 61px);
+        pointer-events: none;
+    }
+
+    .header-inner {
+        position: relative;
+        z-index: 2;
+    }
+
+    .header-badge {
+        display: inline-block;
+        background: rgba(200,149,42,0.15);
+        border: 1px solid rgba(200,149,42,0.4);
+        color: var(--gold-light);
+        padding: 7px 22px;
+        border-radius: 100px;
+        font-size: 0.82rem;
+        letter-spacing: 2px;
+        margin-bottom: 16px;
+        font-weight: 500;
+    }
+
+    header h1 {
+        font-family: 'Amiri', serif;
+        font-size: clamp(1.8rem, 5vw, 3rem);
+        color: var(--white);
+        text-shadow: 0 4px 30px rgba(0,0,0,0.4);
+        margin-bottom: 6px;
+    }
+
+    header h1 span {
+        color: var(--gold-light);
+    }
+
+    .header-divider {
+        width: 60px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        margin: 16px auto 0;
+    }
+
+    /* زر الرجوع */
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(200,149,42,0.12);
+        border: 1px solid rgba(200,149,42,0.3);
+        color: var(--gold-light);
+        padding: 9px 20px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-size: 0.86rem;
+        font-weight: 600;
+        transition: all 0.3s;
+        position: absolute;
+        top: 18px;
+        left: 18px;
+        z-index: 10;
+        font-family: 'Tajawal', sans-serif;
+    }
+
+    .back-btn:hover {
+        background: rgba(200,149,42,0.28);
+        transform: translateX(-3px);
+    }
+
+    /* ===== CONTAINER ===== */
+    .menu-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 60px 24px 80px;
+    }
+
+    /* ===== SECTION HEADER ===== */
+    .section-header {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .section-label {
+        display: inline-block;
+        font-size: 0.8rem;
+        letter-spacing: 3px;
+        color: var(--gold);
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+
+    .menu-title {
+        font-family: 'Amiri', serif;
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+        color: var(--dark);
+        margin-bottom: 14px;
+    }
+
+    .section-divider {
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--crimson), var(--gold), var(--gold-light));
+        margin: 0 auto;
+        border-radius: 4px;
+    }
+
+    /* ===== GRID ===== */
+    .products {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 28px;
+    }
+
+    /* ===== CARD ===== */
+    .product {
+        background: var(--white);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-dark);
+        border: 1px solid rgba(200,149,42,0.10);
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
+        position: relative;
+        animation: fadeUp 0.55s ease both;
+    }
+
+    .product::after {
+        content: '';
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--crimson), var(--gold), var(--gold-light));
+        transform: scaleX(0);
+        transition: transform 0.35s ease;
+    }
+
+    .product:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-gold);
+    }
+
+    .product:hover::after {
+        transform: scaleX(1);
+    }
+
+    /* stagger */
+    .product:nth-child(1){animation-delay:0.05s}
+    .product:nth-child(2){animation-delay:0.12s}
+    .product:nth-child(3){animation-delay:0.19s}
+    .product:nth-child(4){animation-delay:0.26s}
+    .product:nth-child(5){animation-delay:0.33s}
+    .product:nth-child(6){animation-delay:0.40s}
+
+    /* Image wrapper */
+    .product-img-wrap {
+        position: relative;
+        overflow: hidden;
+        height: 220px;
+    }
+
+    .product img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.45s ease;
+    }
+
+    .product:hover img {
+        transform: scale(1.07);
+    }
+
+    /* Overlay gradient */
+    .product-img-wrap::after {
+        content: '';
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        height: 70px;
+        background: linear-gradient(transparent, rgba(26,18,9,0.3));
+        pointer-events: none;
+    }
+
+    /* Placeholder no image */
+    .img-placeholder {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #5c0f0f 0%, var(--dark) 60%, #2a1800 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3.5rem;
+    }
+
+    /* ===== PRODUCT INFO ===== */
+    .product-info {
+        padding: 22px 24px 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .product-info h3 {
+        font-family: 'Amiri', serif;
+        font-size: 1.25rem;
+        color: var(--dark);
+        line-height: 1.3;
+    }
+
+    .product-info p {
+        color: var(--text-muted);
+        font-size: 0.88rem;
+        line-height: 1.7;
+    }
+
+    /* ===== PRICE ===== */
+    .price {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 4px;
+        color: var(--gold);
+        font-size: 1.4rem;
+        font-weight: 800;
+        font-family: 'Amiri', serif;
+        margin-top: 4px;
+    }
+
+    .price .currency {
+        font-size: 0.85rem;
+        font-family: 'Tajawal', sans-serif;
+        color: var(--text-muted);
+        font-weight: 500;
+    }
+
+    /* ===== BACK BTN BOTTOM ===== */
+    .bottom-back {
+        text-align: center;
+        margin-top: 60px;
+    }
+
+    .bottom-back a {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: linear-gradient(135deg, var(--dark), var(--charcoal));
+        color: var(--gold-light);
+        border: 1px solid rgba(200,149,42,0.25);
+        padding: 13px 34px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-size: 0.95rem;
+        font-weight: 700;
+        transition: all 0.3s;
+        box-shadow: 0 4px 18px rgba(0,0,0,0.2);
+        font-family: 'Tajawal', sans-serif;
+    }
+
+    .bottom-back a:hover {
+        background: linear-gradient(135deg, var(--crimson), var(--gold));
+        color: var(--white);
+        border-color: transparent;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 28px rgba(192,57,43,0.35);
+    }
+
+    /* ===== FOOTER ===== */
+    .page-footer {
+        background: var(--dark);
+        text-align: center;
+        padding: 32px 20px;
+        border-top: 1px solid rgba(200,149,42,0.15);
+    }
+
+    .footer-name {
+        font-family: 'Amiri', serif;
+        font-size: 1.25rem;
+        color: var(--gold-light);
+        margin-bottom: 6px;
+    }
+
+    .page-footer p {
+        color: rgba(255,255,255,0.3);
+        font-size: 0.78rem;
+    }
+
+    /* ===== ANIMATION ===== */
+    @keyframes fadeUp {
+        from { opacity:0; transform:translateY(24px); }
+        to   { opacity:1; transform:translateY(0); }
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+        header { padding: 42px 14px 28px; }
+        .menu-container { padding: 36px 14px 60px; }
+        .products { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+        .back-btn { top: 10px; left: 10px; padding: 8px 14px; font-size: 0.8rem; }
+    }
+
+    @media (max-width: 480px) {
+        .products { grid-template-columns: 1fr 1fr; gap: 12px; }
+        .product-img-wrap { height: 155px; }
+        .product-info { padding: 14px 14px 18px; gap: 7px; }
+        .product-info h3 { font-size: 1rem; }
+        .product-info p { display: none; }
+        .price { font-size: 1.15rem; }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-ornament"></div>
+
+    <a href="monu.html" class="back-btn">
+        <i class="fas fa-arrow-right"></i>
+        العودة للمنيو
+    </a>
+
+    <div class="header-inner">
+        <div class="header-badge">✦ مطعم وبروست فاخر ✦</div>
+        <h1>مطاعم وبروست
+            <span>العماد إخوان رويال</span>
+        </h1>
+        <div class="header-divider"></div>
+    </div>
+</header>
+
+<!-- MENU -->
+<div class="menu-container">
+
+    <div class="section-header">
+        <span class="section-label">✦ قائمة الطعام ✦</span>
+        <h2 class="menu-title">مأكولات بحرية</h2>
+        <div class="section-divider"></div>
+    </div>
+
+    <div class="products">
+
+        <!-- كرت 1 -->
+        <div class="product">
+            <div class="product-img-wrap">
+                <!-- ضع رابط الصورة هنا -->
+                <img src="" alt="اسم الطبق"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="img-placeholder" style="display:none">🍽️</div>
+            </div>
+            <div class="product-info">
+                <h3>اسم الطبق</h3>
+                <p>وصف مختصر للطبق يوضح مكوناته وطريقة تحضيره</p>
+                <div class="price">
+                    00 <span class="currency">ريال</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- كرت 2 -->
+        <div class="product">
+            <div class="product-img-wrap">
+                <img src="" alt="اسم الطبق"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="img-placeholder" style="display:none">🍽️</div>
+            </div>
+            <div class="product-info">
+                <h3>اسم الطبق</h3>
+                <p>وصف مختصر للطبق يوضح مكوناته وطريقة تحضيره</p>
+                <div class="price">
+                    00 <span class="currency">ريال</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- كرت 3 -->
+        <div class="product">
+            <div class="product-img-wrap">
+                <img src="" alt="اسم الطبق"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="img-placeholder" style="display:none">🍽️</div>
+            </div>
+            <div class="product-info">
+                <h3>اسم الطبق</h3>
+                <p>وصف مختصر للطبق يوضح مكوناته وطريقة تحضيره</p>
+                <div class="price">
+                    00 <span class="currency">ريال</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- زر الرجوع للأسفل -->
+    <div class="bottom-back">
+        <a href="monu.html">
+            <i class="fas fa-arrow-right"></i>
+            العودة للمنيو
+        </a>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="page-footer">
+    <div class="footer-name">♛ العماد إخوان رويال</div>
+    <p>تعز — البيرين — جوار شركة البُراق للصرافة</p>
+    <p style="margin-top:4px">جميع الحقوق محفوظة © 2026</p>
+</footer>
+
+</body>
+</html>

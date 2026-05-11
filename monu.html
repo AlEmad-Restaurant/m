@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المنيو | العماد إخوان رويال</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
+
+    <style>
+        :root {
+            --gold: #C8952A;
+            --gold-light: #E8B84B;
+            --gold-pale: #f9f0dc;
+            --crimson: #c0392b;
+            --crimson-dark: #8B1A1A;
+            --cream: #FAF6F0;
+            --dark: #1A1209;
+            --charcoal: #2d2416;
+            --text: #3d2e1a;
+            --text-muted: #7a6950;
+            --white: #ffffff;
+            --shadow-gold: 0 8px 40px rgba(200, 149, 42, 0.22);
+            --shadow-dark: 0 20px 60px rgba(26, 18, 9, 0.13);
+            --radius: 20px;
+            --radius-lg: 32px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            overflow-x: hidden;
+            direction: rtl;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: linear-gradient(160deg, #5c0f0f 0%, var(--dark) 50%, #2a1800 100%);
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 60% at 50% 0%, rgba(200,149,42,0.13) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 40% at 80% 80%, rgba(192,57,43,0.22) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .header-ornament {
+            position: absolute;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(200,149,42,0.03) 60px, rgba(200,149,42,0.03) 61px),
+                repeating-linear-gradient(-45deg, transparent, transparent 60px, rgba(200,149,42,0.03) 60px, rgba(200,149,42,0.03) 61px);
+            pointer-events: none;
+        }
+
+        .header-inner {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 50px 20px 40px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: rgba(200,149,42,0.15);
+            border: 1px solid rgba(200,149,42,0.4);
+            color: var(--gold-light);
+            padding: 7px 22px;
+            border-radius: 100px;
+            font-size: 0.82rem;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+            font-weight: 500;
+        }
+
+        header h1 {
+            font-family: 'Amiri', serif;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            color: var(--white);
+            margin-bottom: 8px;
+            text-shadow: 0 4px 30px rgba(0,0,0,0.4);
+        }
+
+        header h1 span {
+            color: var(--gold-light);
+        }
+
+        .header-divider {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 18px auto 0;
+        }
+
+        /* ===== BACK BUTTON ===== */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(200,149,42,0.12);
+            border: 1px solid rgba(200,149,42,0.3);
+            color: var(--gold-light);
+            padding: 10px 22px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+        }
+
+        .back-btn:hover {
+            background: rgba(200,149,42,0.25);
+            transform: translateX(-3px);
+        }
+
+        /* ===== MAIN CONTAINER ===== */
+        .menu-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 24px 80px;
+        }
+
+        /* ===== SECTION HEADER ===== */
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            color: var(--gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .menu-title {
+            font-family: 'Amiri', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--dark);
+            margin-bottom: 14px;
+        }
+
+        .section-divider {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--crimson), var(--gold), var(--gold-light));
+            margin: 0 auto;
+            border-radius: 4px;
+        }
+
+        /* ===== PRODUCTS GRID ===== */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 28px;
+        }
+
+        /* ===== PRODUCT CARD ===== */
+        .product {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-dark);
+            border: 1px solid rgba(200,149,42,0.10);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            position: relative;
+        }
+
+        .product::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--crimson), var(--gold), var(--gold-light));
+            transform: scaleX(0);
+            transition: transform 0.35s ease;
+            border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+        }
+
+        .product:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .product:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* Image wrapper */
+        .product-img-wrap {
+            position: relative;
+            overflow: hidden;
+            height: 210px;
+        }
+
+        .product img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.45s ease;
+        }
+
+        .product:hover img {
+            transform: scale(1.07);
+        }
+
+        /* Gradient overlay on image */
+        .product-img-wrap::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(transparent, rgba(26,18,9,0.35));
+            pointer-events: none;
+        }
+
+        /* Gold corner ribbon */
+        .product-ribbon {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: linear-gradient(135deg, var(--crimson), var(--gold));
+            color: white;
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+            z-index: 2;
+        }
+
+        /* Fallback placeholder when no image */
+        .product-img-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #5c0f0f 0%, var(--dark) 60%, #2a1800 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        /* Info */
+        .product-info {
+            padding: 22px 24px 26px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            text-align: center;
+        }
+
+        .product-info h3 {
+            font-family: 'Amiri', serif;
+            font-size: 1.3rem;
+            color: var(--dark);
+            line-height: 1.3;
+        }
+
+        .product-desc {
+            color: var(--text-muted);
+            font-size: 0.83rem;
+            line-height: 1.7;
+            margin-top: -6px;
+        }
+
+        /* CTA Button */
+        .view-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--dark), var(--charcoal));
+            color: var(--gold-light);
+            border: 1px solid rgba(200,149,42,0.25);
+            padding: 11px 28px;
+            border-radius: 100px;
+            cursor: pointer;
+            font-size: 0.92rem;
+            font-weight: 700;
+            font-family: 'Tajawal', sans-serif;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+        }
+
+        .view-btn:hover {
+            background: linear-gradient(135deg, var(--crimson), var(--gold));
+            color: var(--white);
+            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(192,57,43,0.35);
+        }
+
+        .view-btn i {
+            font-size: 0.8rem;
+        }
+
+        /* ===== FOOTER ===== */
+        .page-footer {
+            background: var(--dark);
+            text-align: center;
+            padding: 36px 20px;
+            border-top: 1px solid rgba(200,149,42,0.15);
+        }
+
+        .footer-name {
+            font-family: 'Amiri', serif;
+            font-size: 1.3rem;
+            color: var(--gold-light);
+            margin-bottom: 8px;
+        }
+
+        .page-footer p {
+            color: rgba(255,255,255,0.3);
+            font-size: 0.8rem;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeSlideUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .product {
+            animation: fadeSlideUp 0.55s ease both;
+        }
+
+        /* stagger */
+        .product:nth-child(1) { animation-delay: 0.05s; }
+        .product:nth-child(2) { animation-delay: 0.12s; }
+        .product:nth-child(3) { animation-delay: 0.19s; }
+        .product:nth-child(4) { animation-delay: 0.26s; }
+        .product:nth-child(5) { animation-delay: 0.33s; }
+        .product:nth-child(6) { animation-delay: 0.40s; }
+        .product:nth-child(7) { animation-delay: 0.47s; }
+        .product:nth-child(8) { animation-delay: 0.54s; }
+        .product:nth-child(9) { animation-delay: 0.61s; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .header-inner { padding: 40px 16px 30px; }
+            .menu-container { padding: 40px 14px 60px; }
+            .products { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; }
+            .back-btn { top: 12px; left: 12px; padding: 8px 16px; font-size: 0.82rem; }
+        }
+
+        @media (max-width: 480px) {
+            .products { grid-template-columns: 1fr 1fr; gap: 14px; }
+            .product-img-wrap { height: 150px; }
+            .product-info { padding: 14px 14px 18px; gap: 10px; }
+            .product-info h3 { font-size: 1.05rem; }
+            .product-desc { display: none; }
+            .view-btn { padding: 9px 18px; font-size: 0.85rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+    <div class="header-ornament"></div>
+    <a href="index.html" class="back-btn">
+        <i class="fas fa-arrow-right"></i>
+        العودة للرئيسية
+    </a>
+    <div class="header-inner">
+        <div class="header-badge">✦ مطعم وبروست فاخر ✦</div>
+        <h1>مطاعم وبروست
+            <span>العماد إخوان رويال</span>
+        </h1>
+        <div class="header-divider"></div>
+    </div>
+</header>
+
+<!-- ===== MENU CONTAINER ===== -->
+<div class="menu-container">
+    <div class="section-header">
+        <span class="section-label">✦ قائمة الطعام ✦</span>
+        <h2 class="menu-title">اختر وجبتك المفضلة</h2>
+        <div class="section-divider"></div>
+    </div>
+
+    <div class="products">
+
+        <!-- قسم الأرز -->
+        <div class="product">
+            <div class="product-img-wrap">
+                <img src="images/images.jpeg" alt="قسم الأرز" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="product-img-placeholder" style="display:none">🍚</div>
+                <div class="product-ribbon"><i class="fas fa-bowl-rice" style="font-size:0.9rem">🍚</i></div>
+            </div>
+            <div class="product-info">
+                <h3>قسم الأرز</h3>
+                <p class="product-desc">أشهى أطباق الأرز بنكهات أصيلة ومميزة</p>
+                <a href="Rice_Section.html" class="view-btn">
+                    <span>عرض القسم</span>
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- البروست -->
+        <div class="product">
+            <div class="product-img-wrap">
+                <!-- <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?q=80&w=1000" alt="البروست"> -->
+                <div class="product-ribbon">🍗</div>
+            </div>
+            <div class="product-info">
+                <h3>البروست</h3>
+                <p class="product-desc">بروست مقرمش بتوابل سرية لا تُقاوم</p>
+                <a href="broast.html" class="view-btn">
+                    <span>عرض القسم</span>
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- المشويات -->
+        <div class="product">
+            <div class="product-img-wrap">
+                <img src="images/images(2).jpeg" alt="المشويات" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="product-img-placeholder" style="display:none">🥩</div>
+                <div class="product-ribbon">🔥</div>
+            </div>
+            <div class="product-info">
+                <h3>المشويات</h3>
+                <p class="product-desc">مشاوي فاخرة على الفحم بنكهة لا تُنسى</p>
+                <a href="Grills.html" class="view-btn">
+                    <span>عرض القسم</span>
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- العصائر والمشروبات -->
+        <div class="product">
+            <div class="product-img-wrap">
+                <img src="images/images(4).jpeg" alt="العصائر" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="product-img-placeholder" style="display:none">🥤</div>
+                <div class="product-ribbon">🧃</div>
+            </div>
+            <div class="product-info">
+                <h3>العصائر والمشروبات</h3>
+                <p class="product-desc">عصائر طازجة ومشروبات منعشة متنوعة</p>
+                <a href="Juices_Drinks.html" class="view-btn">
+                    <span>عرض القسم</span>
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- الحلويات -->
+        <div class="product">
+            <div class="product-img-wrap">
+                <img src="images/images(5).jpeg" alt="الحلويات" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="product-img-placeholder" style="display:none">🍮</div>
+                <div class="product-ribbon">🍰</div>
+            </div>
+            <div class="product-info">
+                <h3>الحلويات</h3>
+                <p class="product-desc">تشكيلة راقية من أشهى الحلويات الشرقية</p>
+                <a href="desserts.html" class="view-btn">
+                    <span>عرض القسم</span>
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- الأكلات الشعبية -->
+        <div class="product">
+            <div class="product-img-wrap">
+                <img src="images/images(6).jpeg" alt="الأكلات الشعبية" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="product-img-placeholder" style="display:none">🫕</div>
+                <div class="product-ribbon">🌾</div>
+            </div>
+            <div class="product-info">
+                <h3>الأكلات الشعبية</h3>
+                <p class="product-desc">وجبات تراثية أصيلة بطعم الجدات</p>
+                <a href="traditional_foods.html" class="view-btn">
+                    <span>عرض القسم</span>
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- ماكولات بحرية -->
+        <div class="product">
+            <div class="product-img-wrap">
+                <!-- <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1000" alt="ماكولات بحرية"> -->
+                <div class="product-ribbon">🦐</div>
+            </div>
+            <div class="product-info">
+                <h3>مأكولات بحرية</h3>
+                <p class="product-desc">أطباق بحرية طازجة بأرقى مذاق</p>
+                <a href="seafood.html" class="view-btn">
+                    <span>عرض القسم</span>
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- المخبازة -->
+        <div class="product">
+            <div class="product-img-wrap">
+                <img src="images/images(7).jpeg" alt="المخبازة" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="product-img-placeholder" style="display:none">🥐</div>
+                <div class="product-ribbon">🍞</div>
+            </div>
+            <div class="product-info">
+                <h3>المخبازة</h3>
+                <p class="product-desc">خبز طازج ومخبوزات يومية شهية</p>
+                <a href="bakery.html" class="view-btn">
+                    <span>عرض القسم</span>
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- المحروقات -->
+        <div class="product">
+            <div class="product-img-wrap">
+                <div class="product-img-placeholder">🪵</div>
+                <div class="product-ribbon">♨️</div>
+            </div>
+            <div class="product-info">
+                <h3>المحروقات</h3>
+                <p class="product-desc">أطباق الفحم الأصيلة بنكهة مدخنة فريدة</p>
+                <a href="charcoal_foods.html" class="view-btn">
+                    <span>عرض القسم</span>
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="page-footer">
+    <div class="footer-name">♛ العماد إخوان رويال</div>
+    <p style="margin-bottom:6px">تعز — البيرين — جوار شركة البُراق للصرافة</p>
+    <p>جميع الحقوق محفوظة © 2026</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إخوان العماد رويال | مطعم وبروست</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
+    <style>
+        :root {
+            --gold: #C8952A;
+            --gold-light: #E8B84B;
+            --gold-pale: #f9f0dc;
+            --crimson: #c0392b;
+            --crimson-dark: #8B1A1A;
+            --cream: #FAF6F0;
+            --dark: #1A1209;
+            --charcoal: #2d2416;
+            --text: #3d2e1a;
+            --text-muted: #7a6950;
+            --white: #ffffff;
+            --shadow-gold: 0 8px 40px rgba(200, 149, 42, 0.22);
+            --shadow-dark: 0 20px 60px rgba(26, 18, 9, 0.13);
+            --radius: 20px;
+            --radius-lg: 32px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            overflow-x: hidden;
+            direction: rtl;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(160deg, #5c0f0f 0%, var(--dark) 50%, #2a1800 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            padding: 60px 20px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 60% at 50% 0%, rgba(200, 149, 42, 0.13) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 40% at 80% 80%, rgba(192, 57, 43, 0.22) 0%, transparent 60%);
+        }
+
+        .hero-ornament {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(200, 149, 42, 0.03) 60px, rgba(200, 149, 42, 0.03) 61px),
+                repeating-linear-gradient(-45deg, transparent, transparent 60px, rgba(200, 149, 42, 0.03) 60px, rgba(200, 149, 42, 0.03) 61px);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Logo in hero */
+        .hero-logo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(200, 149, 42, 0.5);
+            box-shadow: 0 0 50px rgba(200, 149, 42, 0.25), 0 0 0 8px rgba(200, 149, 42, 0.08);
+            margin-bottom: 28px;
+            animation: floatAnim 4s ease-in-out infinite;
+        }
+
+        @keyframes floatAnim {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(200, 149, 42, 0.15);
+            border: 1px solid rgba(200, 149, 42, 0.4);
+            color: var(--gold-light);
+            padding: 8px 24px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        .hero h1 {
+            font-family: 'Amiri', serif;
+            font-size: clamp(2.6rem, 7vw, 5rem);
+            color: var(--white);
+            line-height: 1.2;
+            margin-bottom: 12px;
+            text-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero h1 span {
+            color: var(--gold-light);
+            display: block;
+        }
+
+        .hero-sub {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.55);
+            margin-bottom: 48px;
+            font-weight: 300;
+        }
+
+        .hero-divider {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 0 auto 48px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 50px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat strong {
+            display: block;
+            font-size: 2rem;
+            color: var(--gold-light);
+            font-family: 'Amiri', serif;
+        }
+
+        .hero-stat span {
+            color: rgba(255, 255, 255, 0.45);
+            font-size: 0.85rem;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.3);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            50% {
+                transform: translateX(-50%) translateY(8px);
+            }
+        }
+
+        /* ===== SOCIAL FIXED — redesigned ===== */
+        .social-fixed {
+            position: fixed;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 1000;
+        }
+
+        .social-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+            transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .social-btn:hover {
+            transform: scale(1.15) translateX(4px);
+        }
+
+        .social-btn i {
+            font-size: 1.25rem;
+            transition: all 0.3s;
+        }
+
+        /* Instagram gradient */
+        .social-btn.instagram {
+            background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+
+        .social-btn.instagram i {
+            color: #fff;
+        }
+
+        /* Snapchat */
+        .social-btn.snapchat {
+            background: #FFFC00;
+            border: 2px solid rgba(0, 0, 0, 0.07);
+        }
+
+        .social-btn.snapchat i {
+            color: #000;
+        }
+
+        /* Facebook */
+        .social-btn.facebook {
+            background: #1877F2;
+        }
+
+        .social-btn.facebook i {
+            color: #fff;
+        }
+
+        /* WhatsApp */
+        .social-btn.whatsapp {
+            background: #25D366;
+        }
+
+        .social-btn.whatsapp i {
+            color: #fff;
+        }
+
+        /* YouTube */
+        .social-btn.youtube {
+            background: #FF0000;
+        }
+
+        .social-btn.youtube i {
+            color: #fff;
+        }
+
+        /* TikTok */
+        .social-btn.tiktok {
+            background: #010101;
+            border: 1.5px solid #333;
+        }
+
+        .social-btn.tiktok i {
+            color: #fff;
+        }
+
+        /* tooltip */
+        .social-btn::after {
+            content: attr(data-label);
+            position: absolute;
+            left: 58px;
+            background: var(--dark);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 8px;
+            font-size: 0.78rem;
+            font-family: 'Tajawal', sans-serif;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s;
+            border: 1px solid rgba(200, 149, 42, 0.2);
+        }
+
+        .social-btn:hover::after {
+            opacity: 1;
+        }
+
+        /* ===== SECTION WRAPPER ===== */
+        .section-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            color: var(--gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-family: 'Amiri', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--dark);
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .section-divider {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--crimson), var(--gold), var(--gold-light));
+            margin: 0 auto;
+            border-radius: 4px;
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials-section {
+            padding: 100px 0;
+            background: var(--cream);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .review-card-static {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 36px 28px;
+            border: 1px solid rgba(200, 149, 42, 0.12);
+            box-shadow: var(--shadow-dark);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .review-card-static::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            font-family: 'Amiri', serif;
+            font-size: 8rem;
+            color: var(--gold-pale);
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .review-card-static:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .review-stars {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 16px;
+        }
+
+        .review-stars i {
+            color: var(--gold);
+            font-size: 1rem;
+        }
+
+        .review-text {
+            color: var(--text-muted);
+            line-height: 1.9;
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(200, 149, 42, 0.1);
+        }
+
+        .review-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold), var(--crimson));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            font-family: 'Amiri', serif;
+            flex-shrink: 0;
+        }
+
+        .review-author-info h4 {
+            color: var(--dark);
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 2px;
+        }
+
+        .review-author-info span {
+            color: var(--gold);
+            font-size: 0.8rem;
+        }
+
+        /* ===== ADD REVIEW ===== */
+        .add-review-section {
+            padding: 100px 0;
+            background: linear-gradient(160deg, #5c0f0f 0%, var(--dark) 60%, #2a1800 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .add-review-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(200, 149, 42, 0.09) 0%, transparent 70%);
+        }
+
+        .add-review-section .section-title {
+            color: var(--white);
+        }
+
+        .add-review-section .section-label {
+            color: var(--gold-light);
+        }
+
+        .review-form-card {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(200, 149, 42, 0.2);
+            border-radius: var(--radius-lg);
+            padding: 50px 44px;
+            max-width: 680px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(200, 149, 42, 0.2);
+            border-radius: 12px;
+            padding: 14px 18px;
+            color: var(--white);
+            font-family: 'Tajawal', sans-serif;
+            font-size: 0.95rem;
+            transition: border-color 0.3s, background 0.3s;
+            outline: none;
+            width: 100%;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.25);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--gold);
+            background: rgba(200, 149, 42, 0.07);
+        }
+
+        .form-group select option {
+            background: var(--charcoal);
+            color: var(--white);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 130px;
+        }
+
+        .star-rating-input {
+            display: flex;
+            gap: 8px;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            margin-top: 4px;
+        }
+
+        .star-rating-input input {
+            display: none;
+        }
+
+        .star-rating-input label {
+            font-size: 1.8rem;
+            color: rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: color 0.2s, transform 0.2s;
+        }
+
+        .star-rating-input label:hover,
+        .star-rating-input label:hover~label,
+        .star-rating-input input:checked~label {
+            color: var(--gold-light);
+        }
+
+        .star-rating-input label:hover {
+            transform: scale(1.2);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, var(--crimson), var(--gold));
+            color: var(--white);
+            border: none;
+            border-radius: 14px;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(192, 57, 43, 0.35);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* ===== DYNAMIC REVIEWS ===== */
+        .dynamic-reviews-section {
+            padding: 80px 0;
+            background: var(--cream);
+        }
+
+        #reviews-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .dynamic-review-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 28px 24px;
+            border: 1px solid rgba(200, 149, 42, 0.1);
+            box-shadow: 0 4px 24px rgba(26, 18, 9, 0.07);
+            animation: fadeSlideUp 0.5s ease both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dynamic-review-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--crimson), var(--gold));
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .dynamic-review-card .reviewer-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .dynamic-review-card .reviewer-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold), var(--crimson));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+            font-family: 'Amiri', serif;
+            flex-shrink: 0;
+        }
+
+        .dynamic-review-card .reviewer-name {
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 1rem;
+        }
+
+        .dynamic-review-card .reviewer-stars {
+            color: var(--gold);
+            font-size: 0.95rem;
+            margin-top: 2px;
+        }
+
+        .dynamic-review-card .reviewer-comment {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .loading-state {
+            grid-column: 1 / -1;
+            text-align: center;
+            color: var(--text-muted);
+            padding: 40px;
+            font-size: 1rem;
+        }
+
+        .loading-state i {
+            font-size: 2rem;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 12px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* ===== TOAST ===== */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--dark);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 100px;
+            font-size: 0.95rem;
+            font-family: 'Tajawal', sans-serif;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(200, 149, 42, 0.3);
+            z-index: 9999;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .toast.success {
+            border-color: #4CAF50;
+        }
+
+        .toast.error {
+            border-color: #f44336;
+        }
+
+        /* ===== CONTACT ===== */
+        .contact-section {
+            padding: 100px 0 80px;
+            background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%);
+        }
+
+        /* Top row: map full width */
+        .contact-map-full {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-dark);
+            border: 1px solid rgba(200, 149, 42, 0.15);
+            height: 380px;
+            margin-bottom: 36px;
+        }
+
+        .contact-map-full iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        /* Info cards row */
+        .contact-cards-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+            margin-bottom: 28px;
+        }
+
+        /* Each card */
+        .ccard {
+            background: linear-gradient(140deg, #5c0f0f 0%, var(--dark) 100%);
+            border-radius: var(--radius-lg);
+            padding: 30px 26px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(200, 149, 42, 0.15);
+        }
+
+        .ccard::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: -30px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: rgba(200, 149, 42, 0.07);
+            pointer-events: none;
+        }
+
+        .ccard-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Amiri', serif;
+            font-size: 1.15rem;
+            color: var(--gold-light);
+            margin-bottom: 20px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid rgba(200, 149, 42, 0.18);
+        }
+
+        .ccard-title .icon-badge {
+            width: 38px;
+            height: 38px;
+            border-radius: 11px;
+            background: rgba(200, 149, 42, 0.15);
+            border: 1px solid rgba(200, 149, 42, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold-light);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        /* Phone links inside card */
+        .phone-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 11px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.25s;
+            direction: ltr;
+        }
+
+        .phone-link:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .phone-link:hover {
+            color: var(--gold-light);
+            padding-right: 6px;
+        }
+
+        .phone-link .ph-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: rgba(200, 149, 42, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        /* Info items */
+        .cinfo-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 11px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .cinfo-item:last-child {
+            border-bottom: none;
+        }
+
+        .cinfo-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: rgba(200, 149, 42, 0.12);
+            border: 1px solid rgba(200, 149, 42, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold-light);
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .cinfo-label {
+            font-size: 0.72rem;
+            color: rgba(255, 255, 255, 0.45);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 3px;
+        }
+
+        .cinfo-val {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: white;
+        }
+
+        /* Social row at bottom */
+        .contact-social-strip {
+            background: linear-gradient(135deg, #5c0f0f, var(--dark));
+            border-radius: var(--radius-lg);
+            padding: 26px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 18px;
+            border: 1px solid rgba(200, 149, 42, 0.15);
+        }
+
+        .contact-social-strip-title {
+            font-family: 'Amiri', serif;
+            color: var(--gold-light);
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .contact-social-icons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .contact-social-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1.15rem;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-social-btn:hover {
+            transform: translateY(-4px) scale(1.08);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-social-btn.ig {
+            background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366);
+            color: white;
+        }
+
+        .contact-social-btn.fb {
+            background: #1877F2;
+            color: white;
+        }
+
+        .contact-social-btn.wa {
+            background: #25D366;
+            color: white;
+        }
+
+        .contact-social-btn.sc {
+            background: #FFFC00;
+            color: #000;
+        }
+
+        .contact-social-btn.yt {
+            background: #FF0000;
+            color: white;
+        }
+
+        .contact-social-btn.tt {
+            background: #111;
+            border: 1.5px solid #333;
+            color: white;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--dark);
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(200, 149, 42, 0.15);
+        }
+
+        .footer-logo-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(200, 149, 42, 0.35);
+            margin-bottom: 14px;
+        }
+
+        .footer-name {
+            font-family: 'Amiri', serif;
+            font-size: 1.4rem;
+            color: var(--gold-light);
+            margin-bottom: 8px;
+        }
+
+        .footer p {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.8rem;
+        }
+
+        /* ===== CTA BTN ===== */
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--crimson), var(--gold));
+            color: var(--white);
+            padding: 14px 32px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            box-shadow: 0 8px 30px rgba(192, 57, 43, 0.3);
+            margin-top: 10px;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 40px rgba(192, 57, 43, 0.45);
+        }
+
+        /* ===== RESPONSIVE ===== */
+
+        /* ── Tablet ── */
+        @media (max-width: 1024px) {
+            .contact-cards-row {
+                grid-template-columns: 1fr 1fr !important;
+            }
+
+            .contact-map-full {
+                height: 320px;
+            }
+
+            .section-wrapper {
+                padding: 0 20px;
+            }
+
+            .testimonials-section,
+            .add-review-section,
+            .dynamic-reviews-section,
+            .contact-section {
+                padding: 70px 0;
+            }
+        }
+
+        /* ── Mobile ── */
+        @media (max-width: 768px) {
+
+            /* Social sidebar → bottom bar */
+            .social-fixed {
+                position: fixed;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                top: auto;
+                transform: none;
+                flex-direction: row;
+                justify-content: center;
+                gap: 6px;
+                background: rgba(26, 18, 9, 0.96);
+                backdrop-filter: blur(12px);
+                padding: 10px 12px;
+                border-top: 1px solid rgba(200, 149, 42, 0.2);
+                z-index: 1000;
+            }
+
+            .social-btn {
+                width: 44px;
+                height: 44px;
+                border-radius: 12px;
+            }
+
+            .social-btn i {
+                font-size: 1.1rem;
+            }
+
+            .social-btn::after {
+                display: none;
+            }
+
+            .social-btn:hover {
+                transform: scale(1.08);
+            }
+
+            body {
+                padding-bottom: 70px;
+            }
+
+            /* Hero */
+            .hero {
+                padding: 80px 16px 60px;
+                min-height: auto;
+            }
+
+            .hero-logo {
+                width: 110px;
+                height: 110px;
+            }
+
+            .hero h1 {
+                font-size: clamp(2rem, 9vw, 3rem);
+            }
+
+            .hero-sub {
+                font-size: 0.95rem;
+                margin-bottom: 32px;
+            }
+
+            .hero-stats {
+                gap: 20px;
+            }
+
+            .hero-stat strong {
+                font-size: 1.6rem;
+            }
+
+            /* Sections */
+            .testimonials-section,
+            .add-review-section,
+            .dynamic-reviews-section,
+            .contact-section {
+                padding: 50px 0;
+            }
+
+            .section-header {
+                margin-bottom: 30px;
+            }
+
+            .section-wrapper {
+                padding: 0 14px;
+            }
+
+            /* Reviews grid */
+            .reviews-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            #reviews-list {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            /* Form */
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .review-form-card {
+                padding: 26px 16px;
+                border-radius: 20px;
+            }
+
+            /* Contact new layout */
+            .contact-map-full {
+                height: 240px;
+                margin-bottom: 18px;
+                border-radius: 18px;
+            }
+
+            .contact-cards-row {
+                grid-template-columns: 1fr !important;
+                gap: 14px;
+                margin-bottom: 14px;
+            }
+
+            .ccard {
+                padding: 22px 18px;
+                border-radius: 18px;
+            }
+
+            .ccard-title {
+                font-size: 1rem;
+                margin-bottom: 14px;
+                padding-bottom: 12px;
+            }
+
+            .phone-link {
+                font-size: 0.95rem;
+            }
+
+            .contact-social-strip {
+                padding: 20px 18px;
+                border-radius: 18px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 14px;
+            }
+
+            .contact-social-icons {
+                gap: 8px;
+            }
+
+            .contact-social-btn {
+                width: 42px;
+                height: 42px;
+                border-radius: 11px;
+            }
+
+            /* Footer */
+            .footer {
+                padding: 30px 16px;
+            }
+        }
+
+        /* ── Small Mobile ── */
+        @media (max-width: 400px) {
+            .social-btn {
+                width: 38px;
+                height: 38px;
+                border-radius: 10px;
+            }
+
+            .social-btn i {
+                font-size: 0.95rem;
+            }
+
+            .hero-stats {
+                gap: 14px;
+            }
+
+            .hero-badge {
+                font-size: 0.72rem;
+                padding: 6px 14px;
+                letter-spacing: 1px;
+            }
+
+            .contact-social-btn {
+                width: 38px;
+                height: 38px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== SOCIAL FIXED ===== -->
+    <div class="social-fixed">
+
+
+
+        <a href="https://www.facebook.com/100086561778603/mentions/" class="social-btn facebook" data-label="فيسبوك"
+            title="فيسبوك">
+            <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://wa.me/967730028204" class="social-btn whatsapp" data-label="واتساب" title="واتساب">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+        <a href="https://www.tiktok.com/@user2000446126071" class="social-btn tiktok" data-label="تيك توك"
+            title="تيك توك">
+            <i class="fa-brands fa-tiktok"></i>
+        </a>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="hero-ornament"></div>
+        <div class="hero-content">
+           
+            <!-- Fallback crown icon if no logo image -->
+            <div class="hero-badge">✦ مطعم وبروست فاخر ✦</div>
+            <h1>
+                مطاعم وبروست
+                <span>العماد إخوان رويال </span>
+            </h1>
+            <p class="hero-sub">أصالة النكهة، فخامة التجربة — منذ عقود من الشغف والإبداع</p>
+            <div class="hero-divider"></div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <strong>+١٥</strong>
+                    <span>سنة خبرة</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>+٥٠٠٠</strong>
+                    <span>عميل سعيد</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>٥ ★</strong>
+                    <span>تقييم العملاء</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down fa-lg"></i>
+            <div style="text-align:center; margin-top:-40px; position:relative; z-index:5;">
+                <a href="monu.html" class="cta-btn">
+                    🍽️ مشاهدة المنيو
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== STATIC TESTIMONIALS ===== -->
+    <section class="testimonials-section">
+        <div class="section-wrapper">
+            <div class="section-header">
+                <span class="section-label">✦ تقييمات ✦</span>
+                <h2 class="section-title">ماذا يقول عملاؤنا</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card-static">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">شهادة صدق، افضل بروست موجود داخل تعز. بهارات موزونة و طبخ مضبوط تمام</p>
+                    <div class="review-author">
+                        <div class="review-avatar">ي</div>
+                        <div class="review-author-info">
+                            <h4>ياسر محمد</h4>
+                            <span>زائرة متكررة</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card-static">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">اول شيء التعامل الرهيب  حقهم و سرعة انجاز الطلب غير الجنبري العالمي حقهم. مطعم ممتاز الصراحة</p>
+                    <div class="review-author">
+                        <div class="review-avatar">ع</div>
+                        <div class="review-author-info">
+                            <h4>عماد بسام</h4>
+                            <span>عميل من المدينة</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card-static">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">تعامل ممتاز و اكلهم غير بقية المطاعم بالمنطقة و جربوا الافوكادو حقهم بتدعولي</p>
+                    <div class="review-author">
+                        <div class="review-avatar">أ</div>
+                        <div class="review-author-info">
+                            <h4>أحمد عبدالرقيب</h4>
+                            <span>زبون منتظم</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align:center; margin-top: 50px;">
+                <a href="#add-review" class="cta-btn">
+                    <i class="fas fa-pen-nib"></i>
+                    أضف تقييمك الآن
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ADD REVIEW ===== -->
+    <section class="add-review-section" id="add-review">
+        <div class="section-wrapper">
+            <div class="section-header">
+                <span class="section-label">✦ شاركنا رأيك ✦</span>
+                <h2 class="section-title">أضف تقييمك</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="review-form-card">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>اسمك الكريم</label>
+                        <input type="text" id="customer_name" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label>تقييمك بالنجوم</label>
+                        <div class="star-rating-input">
+                            <input type="radio" id="s5" name="rating" value="5" checked>
+                            <label for="s5" title="5 نجوم">★</label>
+                            <input type="radio" id="s4" name="rating" value="4">
+                            <label for="s4" title="4 نجوم">★</label>
+                            <input type="radio" id="s3" name="rating" value="3">
+                            <label for="s3" title="3 نجوم">★</label>
+                            <input type="radio" id="s2" name="rating" value="2">
+                            <label for="s2" title="2 نجوم">★</label>
+                            <input type="radio" id="s1" name="rating" value="1">
+                            <label for="s1" title="نجمة واحدة">★</label>
+                        </div>
+                    </div>
+                    <div class="form-group full">
+                        <label>تعليقك <span
+                                style="color:rgba(255,255,255,0.3);font-size:0.8rem">(اختياري)</span></label>
+                        <textarea id="comment" placeholder="شاركنا تجربتك إذا أردت... (اختياري)"></textarea>
+                    </div>
+                </div>
+                <button class="submit-btn" onclick="sendReview()" id="submit-btn">
+                    <i class="fas fa-paper-plane"></i>
+                    إرسال التقييم
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DYNAMIC REVIEWS ===== -->
+    <section class="dynamic-reviews-section">
+        <div class="section-wrapper">
+            <div class="section-header">
+                <span class="section-label">✦ من عملائنا ✦</span>
+                <h2 class="section-title">أحدث التقييمات</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div id="reviews-list">
+                <div class="loading-state">
+                    <i class="fas fa-circle-notch"></i>
+                    جارٍ تحميل التقييمات...
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact-section" id="contact">
+        <div class="section-wrapper">
+            <div class="section-header">
+                <span class="section-label">✦ تواصل معنا ✦</span>
+                <h2 class="section-title">موقعنا وطرق التواصل</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <!-- Map full width on top -->
+            <div class="contact-map-full">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3880.926102107556!2d43.97020742538949!3d13.4169012049601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x161c1226c83a7949%3A0x4d810cdc035575ec!2z2YXYt9i52YUg2YjZhdix2KjYp9iy2Kkg2KfZhNi52YXYp9ivINil2K7ZiNih2YYg2LHZiNmK2KfZhA!5e0!3m2!1sar!2s!4v1777914681894!5m2!1sar!2s"
+                    loading="lazy" allowfullscreen>
+                </iframe>
+            </div>
+
+            <!-- Three info cards -->
+            <div class="contact-cards-row">
+                <!-- Delivery -->
+                <div class="ccard">
+                    <div class="ccard-title">
+                        <div class="icon-badge"><i class="fas fa-motorcycle"></i></div>
+                        خدمة التوصيل المجاني
+                    </div>
+                    <a href="tel:+967730028204" class="phone-link">
+                        <span>730 028 204</span>
+                        <div class="ph-icon"><i class="fas fa-phone-alt"></i></div>
+                    </a>
+                    <a href="tel:+967714708770" class="phone-link">
+                        <span>714 708 770</span>
+                        <div class="ph-icon"><i class="fas fa-phone-alt"></i></div>
+                    </a>
+                </div>
+
+                <!-- Customer Service -->
+                <div class="ccard">
+                    <div class="ccard-title">
+                        <div class="icon-badge"><i class="fas fa-headset"></i></div>
+                        خدمة العملاء
+                    </div>
+                    <a href="tel:+967714065871" class="phone-link">
+                        <span>714 065 871</span>
+                        <div class="ph-icon"><i class="fas fa-phone-alt"></i></div>
+                    </a>
+                    <a href="tel:+967775514017" class="phone-link">
+                        <span>775 514 017</span>
+                        <div class="ph-icon"><i class="fas fa-phone-alt"></i></div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Address + Hours row -->
+            <div class="contact-cards-row" style="grid-template-columns: 1fr 1fr 1fr; margin-bottom: 28px;">
+                <div class="ccard">
+                    <div class="cinfo-item" style="border:none;padding:0">
+                        <div class="cinfo-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <div class="cinfo-label">العنوان</div>
+                            <div class="cinfo-val">تعز - البيرين - جوار شركة البُراق للصرافة</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ccard">
+                    <div class="cinfo-item" style="border:none;padding:0">
+                        <div class="cinfo-icon"><i class="fas fa-clock"></i></div>
+                        <div>
+                            <div class="cinfo-label">ساعات العمل</div>
+                            <div class="cinfo-val">٨ ص — ١٢ منتصف الليل</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ccard">
+                    <div class="cinfo-item" style="border:none;padding:0">
+                        <div class="cinfo-icon"><i class="fas fa-utensils"></i></div>
+                        <div>
+                            <div class="cinfo-label">التخصص</div>
+                            <div class="cinfo-val">مشاوي • بروست • وجبات فاخرة</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social strip -->
+            <div class="contact-social-strip">
+                <div class="contact-social-strip-title">تابعنا على منصات التواصل</div>
+                <div class="contact-social-icons">
+
+                    <a href="https://www.facebook.com/100086561778603/mentions/" class="contact-social-btn fb"
+                        title="فيسبوك"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://wa.me/967730028204" class="contact-social-btn wa" title="واتساب"><i
+                            class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://www.tiktok.com/@user2000446126071" class="contact-social-btn tt" title="تيك توك"><i
+                            class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+            <br>
+
+
+
+        </div>
+
+
+
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+       
+        <div class="footer-name">♛ العماد إخوان رويال</div>
+        <p style="margin-bottom:6px">موقعنا :تعز-البيرين-جوار شركة البُراق للصرافة</p>
+        <p>جميع الحقوق محفوظة © 2026
+
+        </p>
+
+
+    </footer>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        // ===== Try to load the logo from uploaded file =====
+        // Since this is a local file, we embed the logo as a base64 placeholder.
+        // Replace the src below with the actual hosted URL of your logo image.
+        // For now the logo section shows the crown text fallback.
+
+        const SUPABASE_URL = 'https://ioizdniatyzwdrflkmpv.supabase.co';
+        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlvaXpkbmlhdHl6d2RyZmxrbXB2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc5MjAyOTAsImV4cCI6MjA5MzQ5NjI5MH0.9ushlXvDiZP11L9_be9FoX0aSx48r4_BhxVaRtgfXAk';
+        const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+        function showToast(msg, type = 'success') {
+            const t = document.getElementById('toast');
+            t.textContent = msg;
+            t.className = `toast ${type} show`;
+            setTimeout(() => t.className = 'toast', 3500);
+        }
+
+        function getSelectedRating() {
+            const checked = document.querySelector('input[name="rating"]:checked');
+            return checked ? parseInt(checked.value) : 5;
+        }
+
+        async function sendReview() {
+            const btn = document.getElementById('submit-btn');
+            const name = document.getElementById('customer_name').value.trim();
+            const rating = getSelectedRating();
+            const comment = document.getElementById('comment').value.trim();
+
+            if (!name) {
+                showToast('⚠️ يرجى كتابة اسمك الكريم', 'error');
+                return;
+            }
+
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> جارٍ الإرسال...';
+
+            const payload = { customer_name: name, rating };
+            if (comment) payload.review = comment;
+
+            const { error } = await _supabase
+                .from('customer_reviews')
+                .insert([payload]);
+
+            btn.disabled = false;
+            btn.innerHTML = '<i class="fas fa-paper-plane"></i> إرسال التقييم';
+
+            if (error) {
+                console.error('Supabase error:', error);
+                showToast(`❌ خطأ: ${error.message || 'خطأ غير معروف'}`, 'error');
+            } else {
+                showToast('✅ شكراً! تم إرسال تقييمك بنجاح.');
+                document.getElementById('customer_name').value = '';
+                document.getElementById('comment').value = '';
+                // Reload both the static section AND dynamic section
+                loadReviews();
+                refreshStaticSection();
+            }
+        }
+
+        async function loadReviews() {
+            const listDiv = document.getElementById('reviews-list');
+            listDiv.innerHTML = `<div class="loading-state"><i class="fas fa-circle-notch"></i>جارٍ تحميل التقييمات...</div>`;
+
+            const { data, error } = await _supabase
+                .from('customer_reviews')
+                .select('*')
+                .gte('rating', 3)
+                .order('created_at', { ascending: false })
+                .limit(12);
+
+            if (error) {
+                listDiv.innerHTML = `<div class="loading-state" style="color:#c0392b"><i class="fas fa-exclamation-circle" style="animation:none"></i>تعذّر تحميل التقييمات</div>`;
+                console.error(error);
+                return;
+            }
+
+            if (!data || data.length === 0) {
+                listDiv.innerHTML = `<div class="loading-state"><i class="fas fa-comment-slash" style="animation:none"></i>لا توجد تقييمات منشورة حالياً. كن أول من يقيّم!</div>`;
+                return;
+            }
+
+            listDiv.innerHTML = '';
+            data.forEach((rev, i) => {
+                const stars = '★'.repeat(rev.rating) + '☆'.repeat(5 - rev.rating);
+                const initial = rev.customer_name ? rev.customer_name.charAt(0) : '؟';
+                const card = document.createElement('div');
+                card.className = 'dynamic-review-card';
+                card.style.animationDelay = `${i * 0.08}s`;
+                card.innerHTML = `
+                <div class="reviewer-meta">
+                    <div class="reviewer-avatar">${escapeHtml(initial)}</div>
+                    <div>
+                        <div class="reviewer-name">${escapeHtml(rev.customer_name)}</div>
+                        <div class="reviewer-stars">${stars}</div>
+                    </div>
+                </div>
+                ${rev.review ? `<div class="reviewer-comment">${escapeHtml(rev.review)}</div>` : ''}
+            `;
+                listDiv.appendChild(card);
+            });
+        }
+
+        // Also refresh the static testimonials grid with newest reviews from DB
+        async function refreshStaticSection() {
+            const { data, error } = await _supabase
+                .from('customer_reviews')
+                .select('*')
+                .gte('rating', 4)
+                .order('created_at', { ascending: false })
+                .limit(3);
+
+            if (error || !data || data.length === 0) return;
+
+            const grid = document.querySelector('.reviews-grid');
+            if (!grid) return;
+
+            // Append new cards (keep originals, add dynamic ones)
+            // Remove previously appended dynamic cards
+            grid.querySelectorAll('.review-card-dynamic-live').forEach(c => c.remove());
+
+            data.forEach(rev => {
+                const stars = '<i class="fas fa-star"></i>'.repeat(rev.rating) + '<i class="far fa-star"></i>'.repeat(5 - rev.rating);
+                const initial = rev.customer_name ? rev.customer_name.charAt(0) : '؟';
+                const card = document.createElement('div');
+                card.className = 'review-card-static review-card-dynamic-live';
+                card.innerHTML = `
+                <div class="review-stars">${stars}</div>
+                <p class="review-text">${escapeHtml(rev.review || 'تقييم رائع!')}</p>
+                <div class="review-author">
+                    <div class="review-avatar">${escapeHtml(initial)}</div>
+                    <div class="review-author-info">
+                        <h4>${escapeHtml(rev.customer_name)}</h4>
+                        <span>عميل </span>
+                    </div>
+                </div>
+            `;
+                grid.appendChild(card);
+            });
+        }
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
+
+        loadReviews();
+        refreshStaticSection();
+
+        // Real-time subscription: auto-reload when new review added
+        _supabase
+            .channel('customer_reviews_channel')
+            .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'customer_reviews' }, () => {
+                loadReviews();
+                refreshStaticSection();
+            })
+            .subscribe();
+    </script>
+
+</body>
+
+</html>
