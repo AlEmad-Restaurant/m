@@ -7,9 +7,7 @@
     <title>إخوان العماد رويال | مطعم وبروست</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Naskh+Arabic:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
     <style>
         :root {
@@ -88,7 +86,6 @@
             z-index: 2;
         }
 
-        /* Logo in hero */
         .hero-logo {
             width: 160px;
             height: 160px;
@@ -101,15 +98,8 @@
         }
 
         @keyframes floatAnim {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-12px);
-            }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
         }
 
         .hero-badge {
@@ -126,10 +116,10 @@
         }
 
         .hero h1 {
-            font-family: 'Amiri', serif;
+            font-family: 'Noto Naskh Arabic', serif;
             font-size: clamp(2.6rem, 7vw, 5rem);
             color: var(--white);
-            line-height: 1.2;
+            line-height: 1.6;
             margin-bottom: 12px;
             text-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
         }
@@ -137,6 +127,7 @@
         .hero h1 span {
             color: var(--gold-light);
             display: block;
+            font-size: 0.85em;
         }
 
         .hero-sub {
@@ -186,18 +177,11 @@
         }
 
         @keyframes bounce {
-
-            0%,
-            100% {
-                transform: translateX(-50%) translateY(0);
-            }
-
-            50% {
-                transform: translateX(-50%) translateY(8px);
-            }
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(8px); }
         }
 
-        /* ===== SOCIAL FIXED — redesigned ===== */
+        /* ===== SOCIAL FIXED ===== */
         .social-fixed {
             position: fixed;
             left: 14px;
@@ -223,14 +207,6 @@
             overflow: hidden;
         }
 
-        .social-btn::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
         .social-btn:hover {
             transform: scale(1.15) translateX(4px);
         }
@@ -240,63 +216,19 @@
             transition: all 0.3s;
         }
 
-        /* Instagram gradient */
-        .social-btn.instagram {
-            background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-        }
+        .social-btn.instagram { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        .social-btn.instagram i { color: #fff; }
+        .social-btn.snapchat { background: #FFFC00; border: 2px solid rgba(0,0,0,0.07); }
+        .social-btn.snapchat i { color: #000; }
+        .social-btn.facebook { background: #1877F2; }
+        .social-btn.facebook i { color: #fff; }
+        .social-btn.whatsapp { background: #25D366; }
+        .social-btn.whatsapp i { color: #fff; }
+        .social-btn.youtube { background: #FF0000; }
+        .social-btn.youtube i { color: #fff; }
+        .social-btn.tiktok { background: #010101; border: 1.5px solid #333; }
+        .social-btn.tiktok i { color: #fff; }
 
-        .social-btn.instagram i {
-            color: #fff;
-        }
-
-        /* Snapchat */
-        .social-btn.snapchat {
-            background: #FFFC00;
-            border: 2px solid rgba(0, 0, 0, 0.07);
-        }
-
-        .social-btn.snapchat i {
-            color: #000;
-        }
-
-        /* Facebook */
-        .social-btn.facebook {
-            background: #1877F2;
-        }
-
-        .social-btn.facebook i {
-            color: #fff;
-        }
-
-        /* WhatsApp */
-        .social-btn.whatsapp {
-            background: #25D366;
-        }
-
-        .social-btn.whatsapp i {
-            color: #fff;
-        }
-
-        /* YouTube */
-        .social-btn.youtube {
-            background: #FF0000;
-        }
-
-        .social-btn.youtube i {
-            color: #fff;
-        }
-
-        /* TikTok */
-        .social-btn.tiktok {
-            background: #010101;
-            border: 1.5px solid #333;
-        }
-
-        .social-btn.tiktok i {
-            color: #fff;
-        }
-
-        /* tooltip */
         .social-btn::after {
             content: attr(data-label);
             position: absolute;
@@ -314,9 +246,7 @@
             border: 1px solid rgba(200, 149, 42, 0.2);
         }
 
-        .social-btn:hover::after {
-            opacity: 1;
-        }
+        .social-btn:hover::after { opacity: 1; }
 
         /* ===== SECTION WRAPPER ===== */
         .section-wrapper {
@@ -402,10 +332,7 @@
             margin-bottom: 16px;
         }
 
-        .review-stars i {
-            color: var(--gold);
-            font-size: 1rem;
-        }
+        .review-stars i { color: var(--gold); font-size: 1rem; }
 
         .review-text {
             color: var(--text-muted);
@@ -439,17 +366,8 @@
             flex-shrink: 0;
         }
 
-        .review-author-info h4 {
-            color: var(--dark);
-            font-weight: 700;
-            font-size: 0.95rem;
-            margin-bottom: 2px;
-        }
-
-        .review-author-info span {
-            color: var(--gold);
-            font-size: 0.8rem;
-        }
+        .review-author-info h4 { color: var(--dark); font-weight: 700; font-size: 0.95rem; margin-bottom: 2px; }
+        .review-author-info span { color: var(--gold); font-size: 0.8rem; }
 
         /* ===== ADD REVIEW ===== */
         .add-review-section {
@@ -466,13 +384,8 @@
             background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(200, 149, 42, 0.09) 0%, transparent 70%);
         }
 
-        .add-review-section .section-title {
-            color: var(--white);
-        }
-
-        .add-review-section .section-label {
-            color: var(--gold-light);
-        }
+        .add-review-section .section-title { color: var(--white); }
+        .add-review-section .section-label { color: var(--gold-light); }
 
         .review-form-card {
             background: rgba(255, 255, 255, 0.04);
@@ -493,15 +406,8 @@
             margin-bottom: 16px;
         }
 
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .form-group.full {
-            grid-column: 1 / -1;
-        }
+        .form-group { display: flex; flex-direction: column; gap: 8px; }
+        .form-group.full { grid-column: 1 / -1; }
 
         .form-group label {
             color: rgba(255, 255, 255, 0.7);
@@ -526,9 +432,7 @@
         }
 
         .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(255, 255, 255, 0.25);
-        }
+        .form-group textarea::placeholder { color: rgba(255, 255, 255, 0.25); }
 
         .form-group input:focus,
         .form-group select:focus,
@@ -537,15 +441,8 @@
             background: rgba(200, 149, 42, 0.07);
         }
 
-        .form-group select option {
-            background: var(--charcoal);
-            color: var(--white);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 130px;
-        }
+        .form-group select option { background: var(--charcoal); color: var(--white); }
+        .form-group textarea { resize: vertical; min-height: 130px; }
 
         .star-rating-input {
             display: flex;
@@ -555,9 +452,7 @@
             margin-top: 4px;
         }
 
-        .star-rating-input input {
-            display: none;
-        }
+        .star-rating-input input { display: none; }
 
         .star-rating-input label {
             font-size: 1.8rem;
@@ -567,14 +462,10 @@
         }
 
         .star-rating-input label:hover,
-        .star-rating-input label:hover~label,
-        .star-rating-input input:checked~label {
-            color: var(--gold-light);
-        }
+        .star-rating-input label:hover ~ label,
+        .star-rating-input input:checked ~ label { color: var(--gold-light); }
 
-        .star-rating-input label:hover {
-            transform: scale(1.2);
-        }
+        .star-rating-input label:hover { transform: scale(1.2); }
 
         .submit-btn {
             width: 100%;
@@ -592,26 +483,12 @@
             letter-spacing: 0.5px;
         }
 
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 35px rgba(192, 57, 43, 0.35);
-        }
-
-        .submit-btn:active {
-            transform: translateY(0);
-        }
-
-        .submit-btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
-        }
+        .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 35px rgba(192, 57, 43, 0.35); }
+        .submit-btn:active { transform: translateY(0); }
+        .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
 
         /* ===== DYNAMIC REVIEWS ===== */
-        .dynamic-reviews-section {
-            padding: 80px 0;
-            background: var(--cream);
-        }
+        .dynamic-reviews-section { padding: 80px 0; background: var(--cream); }
 
         #reviews-list {
             display: grid;
@@ -634,65 +511,31 @@
         .dynamic-review-card::after {
             content: '';
             position: absolute;
-            top: 0;
-            right: 0;
-            width: 4px;
-            height: 100%;
+            top: 0; right: 0;
+            width: 4px; height: 100%;
             background: linear-gradient(180deg, var(--crimson), var(--gold));
             border-radius: 0 var(--radius) var(--radius) 0;
         }
 
         @keyframes fadeSlideUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .dynamic-review-card .reviewer-meta {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 14px;
-        }
+        .dynamic-review-card .reviewer-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
 
         .dynamic-review-card .reviewer-avatar {
-            width: 42px;
-            height: 42px;
+            width: 42px; height: 42px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--gold), var(--crimson));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 1rem;
-            font-family: 'Amiri', serif;
-            flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-weight: 700; font-size: 1rem;
+            font-family: 'Amiri', serif; flex-shrink: 0;
         }
 
-        .dynamic-review-card .reviewer-name {
-            font-weight: 700;
-            color: var(--dark);
-            font-size: 1rem;
-        }
-
-        .dynamic-review-card .reviewer-stars {
-            color: var(--gold);
-            font-size: 0.95rem;
-            margin-top: 2px;
-        }
-
-        .dynamic-review-card .reviewer-comment {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            line-height: 1.8;
-        }
+        .dynamic-review-card .reviewer-name { font-weight: 700; color: var(--dark); font-size: 1rem; }
+        .dynamic-review-card .reviewer-stars { color: var(--gold); font-size: 0.95rem; margin-top: 2px; }
+        .dynamic-review-card .reviewer-comment { color: var(--text-muted); font-size: 0.9rem; line-height: 1.8; }
 
         .loading-state {
             grid-column: 1 / -1;
@@ -703,553 +546,208 @@
         }
 
         .loading-state i {
-            font-size: 2rem;
-            color: var(--gold);
-            display: block;
-            margin-bottom: 12px;
+            font-size: 2rem; color: var(--gold);
+            display: block; margin-bottom: 12px;
             animation: spin 1s linear infinite;
         }
 
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
+        @keyframes spin { to { transform: rotate(360deg); } }
 
         /* ===== TOAST ===== */
         .toast {
             position: fixed;
-            bottom: 30px;
-            left: 50%;
+            bottom: 30px; left: 50%;
             transform: translateX(-50%) translateY(100px);
-            background: var(--dark);
-            color: white;
-            padding: 14px 32px;
-            border-radius: 100px;
-            font-size: 0.95rem;
-            font-family: 'Tajawal', sans-serif;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(200, 149, 42, 0.3);
+            background: var(--dark); color: white;
+            padding: 14px 32px; border-radius: 100px;
+            font-size: 0.95rem; font-family: 'Tajawal', sans-serif;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            border: 1px solid rgba(200,149,42,0.3);
             z-index: 9999;
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .toast.show {
-            transform: translateX(-50%) translateY(0);
-        }
-
-        .toast.success {
-            border-color: #4CAF50;
-        }
-
-        .toast.error {
-            border-color: #f44336;
-        }
+        .toast.show { transform: translateX(-50%) translateY(0); }
+        .toast.success { border-color: #4CAF50; }
+        .toast.error { border-color: #f44336; }
 
         /* ===== CONTACT ===== */
-        .contact-section {
-            padding: 100px 0 80px;
-            background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%);
-        }
+        .contact-section { padding: 100px 0 80px; background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%); }
 
-        /* Top row: map full width */
         .contact-map-full {
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-dark);
-            border: 1px solid rgba(200, 149, 42, 0.15);
-            height: 380px;
-            margin-bottom: 36px;
+            border-radius: var(--radius-lg); overflow: hidden;
+            box-shadow: var(--shadow-dark); border: 1px solid rgba(200,149,42,0.15);
+            height: 380px; margin-bottom: 36px;
         }
 
-        .contact-map-full iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            display: block;
-        }
+        .contact-map-full iframe { width: 100%; height: 100%; border: none; display: block; }
 
-        /* Info cards row */
-        .contact-cards-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 22px;
-            margin-bottom: 28px;
-        }
+        .contact-cards-row { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-bottom: 28px; }
 
-        /* Each card */
         .ccard {
             background: linear-gradient(140deg, #5c0f0f 0%, var(--dark) 100%);
-            border-radius: var(--radius-lg);
-            padding: 30px 26px;
-            color: white;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(200, 149, 42, 0.15);
+            border-radius: var(--radius-lg); padding: 30px 26px;
+            color: white; position: relative; overflow: hidden;
+            border: 1px solid rgba(200,149,42,0.15);
         }
 
         .ccard::before {
-            content: '';
-            position: absolute;
-            top: -30px;
-            left: -30px;
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: rgba(200, 149, 42, 0.07);
-            pointer-events: none;
+            content: ''; position: absolute; top: -30px; left: -30px;
+            width: 120px; height: 120px; border-radius: 50%;
+            background: rgba(200,149,42,0.07); pointer-events: none;
         }
 
         .ccard-title {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-family: 'Amiri', serif;
-            font-size: 1.15rem;
-            color: var(--gold-light);
-            margin-bottom: 20px;
-            padding-bottom: 14px;
-            border-bottom: 1px solid rgba(200, 149, 42, 0.18);
+            display: flex; align-items: center; gap: 10px;
+            font-family: 'Amiri', serif; font-size: 1.15rem; color: var(--gold-light);
+            margin-bottom: 20px; padding-bottom: 14px;
+            border-bottom: 1px solid rgba(200,149,42,0.18);
         }
 
         .ccard-title .icon-badge {
-            width: 38px;
-            height: 38px;
-            border-radius: 11px;
-            background: rgba(200, 149, 42, 0.15);
-            border: 1px solid rgba(200, 149, 42, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold-light);
-            font-size: 1rem;
-            flex-shrink: 0;
+            width: 38px; height: 38px; border-radius: 11px;
+            background: rgba(200,149,42,0.15); border: 1px solid rgba(200,149,42,0.3);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--gold-light); font-size: 1rem; flex-shrink: 0;
         }
 
-        /* Phone links inside card */
         .phone-link {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            text-decoration: none;
-            color: white;
-            font-size: 1rem;
-            font-weight: 600;
-            padding: 11px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            transition: all 0.25s;
-            direction: ltr;
+            display: flex; align-items: center; justify-content: space-between;
+            text-decoration: none; color: white; font-size: 1rem; font-weight: 600;
+            padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+            transition: all 0.25s; direction: ltr;
         }
 
-        .phone-link:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .phone-link:hover {
-            color: var(--gold-light);
-            padding-right: 6px;
-        }
+        .phone-link:last-child { border-bottom: none; padding-bottom: 0; }
+        .phone-link:hover { color: var(--gold-light); padding-right: 6px; }
 
         .phone-link .ph-icon {
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
-            background: rgba(200, 149, 42, 0.12);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold);
-            font-size: 0.8rem;
-            flex-shrink: 0;
+            width: 32px; height: 32px; border-radius: 8px;
+            background: rgba(200,149,42,0.12);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--gold); font-size: 0.8rem; flex-shrink: 0;
         }
 
-        /* Info items */
-        .cinfo-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 14px;
-            padding: 11px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        }
-
-        .cinfo-item:last-child {
-            border-bottom: none;
-        }
+        .cinfo-item { display: flex; align-items: flex-start; gap: 14px; padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .cinfo-item:last-child { border-bottom: none; }
 
         .cinfo-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            background: rgba(200, 149, 42, 0.12);
-            border: 1px solid rgba(200, 149, 42, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold-light);
-            font-size: 0.9rem;
-            flex-shrink: 0;
-            margin-top: 2px;
+            width: 36px; height: 36px; border-radius: 10px;
+            background: rgba(200,149,42,0.12); border: 1px solid rgba(200,149,42,0.2);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--gold-light); font-size: 0.9rem; flex-shrink: 0; margin-top: 2px;
         }
 
-        .cinfo-label {
-            font-size: 0.72rem;
-            color: rgba(255, 255, 255, 0.45);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 3px;
-        }
+        .cinfo-label { font-size: 0.72rem; color: rgba(255,255,255,0.45); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 3px; }
+        .cinfo-val { font-size: 0.95rem; font-weight: 500; color: white; }
 
-        .cinfo-val {
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: white;
-        }
-
-        /* Social row at bottom */
         .contact-social-strip {
             background: linear-gradient(135deg, #5c0f0f, var(--dark));
-            border-radius: var(--radius-lg);
-            padding: 26px 30px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 18px;
-            border: 1px solid rgba(200, 149, 42, 0.15);
+            border-radius: var(--radius-lg); padding: 26px 30px;
+            display: flex; align-items: center; justify-content: space-between;
+            flex-wrap: wrap; gap: 18px; border: 1px solid rgba(200,149,42,0.15);
         }
 
-        .contact-social-strip-title {
-            font-family: 'Amiri', serif;
-            color: var(--gold-light);
-            font-size: 1.1rem;
-            flex-shrink: 0;
-        }
-
-        .contact-social-icons {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
+        .contact-social-strip-title { font-family: 'Amiri', serif; color: var(--gold-light); font-size: 1.1rem; flex-shrink: 0; }
+        .contact-social-icons { display: flex; gap: 10px; flex-wrap: wrap; }
 
         .contact-social-btn {
-            width: 44px;
-            height: 44px;
-            border-radius: 13px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: all 0.3s;
-            font-size: 1.15rem;
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+            width: 44px; height: 44px; border-radius: 13px;
+            display: flex; align-items: center; justify-content: center;
+            text-decoration: none; transition: all 0.3s; font-size: 1.15rem;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.2);
         }
 
-        .contact-social-btn:hover {
-            transform: translateY(-4px) scale(1.08);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-        }
-
-        .contact-social-btn.ig {
-            background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366);
-            color: white;
-        }
-
-        .contact-social-btn.fb {
-            background: #1877F2;
-            color: white;
-        }
-
-        .contact-social-btn.wa {
-            background: #25D366;
-            color: white;
-        }
-
-        .contact-social-btn.sc {
-            background: #FFFC00;
-            color: #000;
-        }
-
-        .contact-social-btn.yt {
-            background: #FF0000;
-            color: white;
-        }
-
-        .contact-social-btn.tt {
-            background: #111;
-            border: 1.5px solid #333;
-            color: white;
-        }
+        .contact-social-btn:hover { transform: translateY(-4px) scale(1.08); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+        .contact-social-btn.ig { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366); color: white; }
+        .contact-social-btn.fb { background: #1877F2; color: white; }
+        .contact-social-btn.wa { background: #25D366; color: white; }
+        .contact-social-btn.sc { background: #FFFC00; color: #000; }
+        .contact-social-btn.yt { background: #FF0000; color: white; }
+        .contact-social-btn.tt { background: #111; border: 1.5px solid #333; color: white; }
 
         /* ===== FOOTER ===== */
-        .footer {
-            background: var(--dark);
-            text-align: center;
-            padding: 40px 20px;
-            border-top: 1px solid rgba(200, 149, 42, 0.15);
-        }
+        .footer { background: var(--dark); text-align: center; padding: 40px 20px; border-top: 1px solid rgba(200,149,42,0.15); }
 
         .footer-logo-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid rgba(200, 149, 42, 0.35);
-            margin-bottom: 14px;
+            width: 80px; height: 80px; border-radius: 50%; object-fit: cover;
+            border: 2px solid rgba(200,149,42,0.35); margin-bottom: 14px;
         }
 
-        .footer-name {
-            font-family: 'Amiri', serif;
-            font-size: 1.4rem;
-            color: var(--gold-light);
-            margin-bottom: 8px;
-        }
-
-        .footer p {
-            color: rgba(255, 255, 255, 0.3);
-            font-size: 0.8rem;
-        }
+        .footer-name { font-family: 'Amiri', serif; font-size: 1.4rem; color: var(--gold-light); margin-bottom: 8px; }
+        .footer p { color: rgba(255,255,255,0.3); font-size: 0.8rem; }
 
         /* ===== CTA BTN ===== */
         .cta-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-items: center;
-            gap: 10px;
+            display: inline-flex; align-items: center; justify-items: center; gap: 10px;
             background: linear-gradient(135deg, var(--crimson), var(--gold));
-            color: var(--white);
-            padding: 10px 18px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.85rem;
-            transition: none;
-            box-shadow: 0 8px 30px rgba(192, 57, 43, 0.3);
-            margin-top: 10px;
-        }
-        @media(max-width:768px)
-        {
-            .cta-btn{
-                padding: 8px 14px;
-                font-size: 0.8rem;
-                width: fit-content;
-                max-width: 100%;
-            }
+            color: var(--white); padding: 10px 18px; border-radius: 50px;
+            text-decoration: none; font-weight: 700; font-size: 0.85rem;
+            transition: none; box-shadow: 0 8px 30px rgba(192,57,43,0.3); margin-top: 10px;
         }
 
-       
+        @media(max-width:768px) {
+            .cta-btn { padding: 8px 14px; font-size: 0.8rem; width: fit-content; max-width: 100%; }
+        }
 
         /* ===== RESPONSIVE ===== */
-
-        /* ── Tablet ── */
         @media (max-width: 1024px) {
-            .contact-cards-row {
-                grid-template-columns: 1fr 1fr !important;
-            }
-
-            .contact-map-full {
-                height: 320px;
-            }
-
-            .section-wrapper {
-                padding: 0 20px;
-            }
-
-            .testimonials-section,
-            .add-review-section,
-            .dynamic-reviews-section,
-            .contact-section {
-                padding: 70px 0;
-            }
+            .contact-cards-row { grid-template-columns: 1fr 1fr !important; }
+            .contact-map-full { height: 320px; }
+            .section-wrapper { padding: 0 20px; }
+            .testimonials-section, .add-review-section, .dynamic-reviews-section, .contact-section { padding: 70px 0; }
         }
 
-        /* ── Mobile ── */
         @media (max-width: 768px) {
-
-            /* Social sidebar → bottom bar */
             .social-fixed {
-                position: fixed;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                top: auto;
-                transform: none;
-                flex-direction: row;
-                justify-content: center;
-                gap: 6px;
-                background: rgba(26, 18, 9, 0.96);
-                backdrop-filter: blur(12px);
-                padding: 10px 12px;
-                border-top: 1px solid rgba(200, 149, 42, 0.2);
-                z-index: 1000;
+                position: fixed; left: 0; right: 0; bottom: 0; top: auto;
+                transform: none; flex-direction: row; justify-content: center; gap: 6px;
+                background: rgba(26,18,9,0.96); backdrop-filter: blur(12px);
+                padding: 10px 12px; border-top: 1px solid rgba(200,149,42,0.2); z-index: 1000;
             }
 
-            .social-btn {
-                width: 44px;
-                height: 44px;
-                border-radius: 12px;
-            }
+            .social-btn { width: 44px; height: 44px; border-radius: 12px; }
+            .social-btn i { font-size: 1.1rem; }
+            .social-btn::after { display: none; }
+            .social-btn:hover { transform: scale(1.08); }
+            body { padding-bottom: 70px; }
 
-            .social-btn i {
-                font-size: 1.1rem;
-            }
+            .hero { padding: 80px 16px 60px; min-height: auto; }
+            .hero-logo { width: 110px; height: 110px; }
+            .hero h1 { font-size: clamp(2rem, 9vw, 3rem); }
+            .hero-sub { font-size: 0.95rem; margin-bottom: 32px; }
+            .hero-stats { gap: 20px; }
+            .hero-stat strong { font-size: 1.6rem; }
 
-            .social-btn::after {
-                display: none;
-            }
+            .testimonials-section, .add-review-section, .dynamic-reviews-section, .contact-section { padding: 50px 0; }
+            .section-header { margin-bottom: 30px; }
+            .section-wrapper { padding: 0 14px; }
 
-            .social-btn:hover {
-                transform: scale(1.08);
-            }
+            .reviews-grid { grid-template-columns: 1fr; gap: 16px; }
+            #reviews-list { grid-template-columns: 1fr; gap: 14px; }
 
-            body {
-                padding-bottom: 70px;
-            }
+            .form-grid { grid-template-columns: 1fr; }
+            .review-form-card { padding: 26px 16px; border-radius: 20px; }
 
-            /* Hero */
-            .hero {
-                padding: 80px 16px 60px;
-                min-height: auto;
-            }
+            .contact-map-full { height: 240px; margin-bottom: 18px; border-radius: 18px; }
+            .contact-cards-row { grid-template-columns: 1fr !important; gap: 14px; margin-bottom: 14px; }
+            .ccard { padding: 22px 18px; border-radius: 18px; }
+            .ccard-title { font-size: 1rem; margin-bottom: 14px; padding-bottom: 12px; }
+            .phone-link { font-size: 0.95rem; }
 
-            .hero-logo {
-                width: 110px;
-                height: 110px;
-            }
+            .contact-social-strip { padding: 20px 18px; border-radius: 18px; flex-direction: column; align-items: flex-start; gap: 14px; }
+            .contact-social-icons { gap: 8px; }
+            .contact-social-btn { width: 42px; height: 42px; border-radius: 11px; }
 
-            .hero h1 {
-                font-size: clamp(2rem, 9vw, 3rem);
-            }
-
-            .hero-sub {
-                font-size: 0.95rem;
-                margin-bottom: 32px;
-            }
-
-            .hero-stats {
-                gap: 20px;
-            }
-
-            .hero-stat strong {
-                font-size: 1.6rem;
-            }
-
-            /* Sections */
-            .testimonials-section,
-            .add-review-section,
-            .dynamic-reviews-section,
-            .contact-section {
-                padding: 50px 0;
-            }
-
-            .section-header {
-                margin-bottom: 30px;
-            }
-
-            .section-wrapper {
-                padding: 0 14px;
-            }
-
-            /* Reviews grid */
-            .reviews-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-
-            #reviews-list {
-                grid-template-columns: 1fr;
-                gap: 14px;
-            }
-
-            /* Form */
-            .form-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .review-form-card {
-                padding: 26px 16px;
-                border-radius: 20px;
-            }
-
-            /* Contact new layout */
-            .contact-map-full {
-                height: 240px;
-                margin-bottom: 18px;
-                border-radius: 18px;
-            }
-
-            .contact-cards-row {
-                grid-template-columns: 1fr !important;
-                gap: 14px;
-                margin-bottom: 14px;
-            }
-
-            .ccard {
-                padding: 22px 18px;
-                border-radius: 18px;
-            }
-
-            .ccard-title {
-                font-size: 1rem;
-                margin-bottom: 14px;
-                padding-bottom: 12px;
-            }
-
-            .phone-link {
-                font-size: 0.95rem;
-            }
-
-            .contact-social-strip {
-                padding: 20px 18px;
-                border-radius: 18px;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 14px;
-            }
-
-            .contact-social-icons {
-                gap: 8px;
-            }
-
-            .contact-social-btn {
-                width: 42px;
-                height: 42px;
-                border-radius: 11px;
-            }
-
-            /* Footer */
-            .footer {
-                padding: 30px 16px;
-            }
+            .footer { padding: 30px 16px; }
         }
 
-        /* ── Small Mobile ── */
         @media (max-width: 400px) {
-            .social-btn {
-                width: 38px;
-                height: 38px;
-                border-radius: 10px;
-            }
-
-            .social-btn i {
-                font-size: 0.95rem;
-            }
-
-            .hero-stats {
-                gap: 14px;
-            }
-
-            .hero-badge {
-                font-size: 0.72rem;
-                padding: 6px 14px;
-                letter-spacing: 1px;
-            }
-
-            .contact-social-btn {
-                width: 38px;
-                height: 38px;
-                font-size: 1rem;
-            }
+            .social-btn { width: 38px; height: 38px; border-radius: 10px; }
+            .social-btn i { font-size: 0.95rem; }
+            .hero-stats { gap: 14px; }
+            .hero-badge { font-size: 0.72rem; padding: 6px 14px; letter-spacing: 1px; }
+            .contact-social-btn { width: 38px; height: 38px; font-size: 1rem; }
         }
     </style>
 </head>
@@ -1258,19 +756,13 @@
 
     <!-- ===== SOCIAL FIXED ===== -->
     <div class="social-fixed">
-
-
-
-        <a href="https://www.facebook.com/100086561778603/mentions/" class="social-btn facebook" data-label="فيسبوك"
-            title="فيسبوك">
+        <a href="https://www.facebook.com/100086561778603/mentions/" class="social-btn facebook" data-label="فيسبوك" title="فيسبوك">
             <i class="fa-brands fa-facebook-f"></i>
         </a>
         <a href="https://wa.me/967730028204" class="social-btn whatsapp" data-label="واتساب" title="واتساب">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
-
-        <a href="https://www.tiktok.com/@user2000446126071" class="social-btn tiktok" data-label="تيك توك"
-            title="تيك توك">
+        <a href="https://www.tiktok.com/@user2000446126071" class="social-btn tiktok" data-label="تيك توك" title="تيك توك">
             <i class="fa-brands fa-tiktok"></i>
         </a>
     </div>
@@ -1279,12 +771,11 @@
     <section class="hero">
         <div class="hero-ornament"></div>
         <div class="hero-content">
-           
-            <!-- Fallback crown icon if no logo image -->
             <div class="hero-badge">✦ مطعم وبروست فاخر ✦</div>
             <h1>
-                مطاعم وبروست
-                <span>العماد إخوان رويال </span>
+                مطاعـــــــــم وبروســـــــت
+                <br>
+                <span>العمـــاد إخـــوان رويـــال</span>
             </h1>
             <p class="hero-sub">أصالة النكهة، فخامة التجربة — منذ عقود من الشغف والإبداع</p>
             <div class="hero-divider"></div>
@@ -1341,7 +832,7 @@
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         <i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <p class="review-text">اول شيء التعامل الرهيب  حقهم و سرعة انجاز الطلب غير الجنبري العالمي حقهم. مطعم ممتاز الصراحة</p>
+                    <p class="review-text">اول شيء التعامل الرهيب حقهم و سرعة انجاز الطلب غير الجنبري العالمي حقهم. مطعم ممتاز الصراحة</p>
                     <div class="review-author">
                         <div class="review-avatar">ع</div>
                         <div class="review-author-info">
@@ -1404,8 +895,7 @@
                         </div>
                     </div>
                     <div class="form-group full">
-                        <label>تعليقك <span
-                                style="color:rgba(255,255,255,0.3);font-size:0.8rem">(اختياري)</span></label>
+                        <label>تعليقك <span style="color:rgba(255,255,255,0.3);font-size:0.8rem">(اختياري)</span></label>
                         <textarea id="comment" placeholder="شاركنا تجربتك إذا أردت... (اختياري)"></textarea>
                     </div>
                 </div>
@@ -1443,17 +933,11 @@
                 <div class="section-divider"></div>
             </div>
 
-            <!-- Map full width on top -->
             <div class="contact-map-full">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3880.926102107556!2d43.97020742538949!3d13.4169012049601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x161c1226c83a7949%3A0x4d810cdc035575ec!2z2YXYt9i52YUg2YjZhdix2KjYp9iy2Kkg2KfZhNi52YXYp9ivINil2K7ZiNih2YYg2LHZiNmK2KfZhA!5e0!3m2!1sar!2s!4v1777914681894!5m2!1sar!2s"
-                    loading="lazy" allowfullscreen>
-                </iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3880.926102107556!2d43.97020742538949!3d13.4169012049601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x161c1226c83a7949%3A0x4d810cdc035575ec!2z2YXYt9i52YUg2YjZhdix2KjYp9iy2Kkg2KfZhNi52YXYp9ivINil2K7ZiNi_2YYg2LHZiNmK2KfZhA!5e0!3m2!1sar!2s!4v1777914681894!5m2!1sar!2s" loading="lazy" allowfullscreen></iframe>
             </div>
 
-            <!-- Three info cards -->
             <div class="contact-cards-row">
-                <!-- Delivery -->
                 <div class="ccard">
                     <div class="ccard-title">
                         <div class="icon-badge"><i class="fas fa-motorcycle"></i></div>
@@ -1468,8 +952,6 @@
                         <div class="ph-icon"><i class="fas fa-phone-alt"></i></div>
                     </a>
                 </div>
-
-                <!-- Customer Service -->
                 <div class="ccard">
                     <div class="ccard-title">
                         <div class="icon-badge"><i class="fas fa-headset"></i></div>
@@ -1486,7 +968,6 @@
                 </div>
             </div>
 
-            <!-- Address + Hours row -->
             <div class="contact-cards-row" style="grid-template-columns: 1fr 1fr 1fr; margin-bottom: 28px;">
                 <div class="ccard">
                     <div class="cinfo-item" style="border:none;padding:0">
@@ -1517,39 +998,23 @@
                 </div>
             </div>
 
-            <!-- Social strip -->
             <div class="contact-social-strip">
                 <div class="contact-social-strip-title">تابعنا على منصات التواصل</div>
                 <div class="contact-social-icons">
-
-                    <a href="https://www.facebook.com/100086561778603/mentions/" class="contact-social-btn fb"
-                        title="فيسبوك"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://wa.me/967730028204" class="contact-social-btn wa" title="واتساب"><i
-                            class="fa-brands fa-whatsapp"></i></a>
-                    <a href="https://www.tiktok.com/@user2000446126071" class="contact-social-btn tt" title="تيك توك"><i
-                            class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.facebook.com/100086561778603/mentions/" class="contact-social-btn fb" title="فيسبوك"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://wa.me/967730028204" class="contact-social-btn wa" title="واتساب"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://www.tiktok.com/@user2000446126071" class="contact-social-btn tt" title="تيك توك"><i class="fa-brands fa-tiktok"></i></a>
                 </div>
             </div>
             <br>
-
-
-
         </div>
-
-
-
     </section>
 
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
-       
         <div class="footer-name">♛ العماد إخوان رويال</div>
-        <p style="margin-bottom:6px">موقعنا :تعز-البيرين-جوار شركة البُراق للصرافة</p>
-        <p>جميع الحقوق محفوظة © 2026
-
-        </p>
-
-
+        <p style="margin-bottom:6px">موقعنا: تعز-البيرين-جوار شركة البُراق للصرافة</p>
+        <p>جميع الحقوق محفوظة © 2026</p>
     </footer>
 
     <!-- TOAST -->
@@ -1558,11 +1023,6 @@
     <!-- Supabase -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
-        // ===== Try to load the logo from uploaded file =====
-        // Since this is a local file, we embed the logo as a base64 placeholder.
-        // Replace the src below with the actual hosted URL of your logo image.
-        // For now the logo section shows the crown text fallback.
-
         const SUPABASE_URL = 'https://ioizdniatyzwdrflkmpv.supabase.co';
         const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlvaXpkbmlhdHl6d2RyZmxrbXB2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc5MjAyOTAsImV4cCI6MjA5MzQ5NjI5MH0.9ushlXvDiZP11L9_be9FoX0aSx48r4_BhxVaRtgfXAk';
         const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
@@ -1585,10 +1045,7 @@
             const rating = getSelectedRating();
             const comment = document.getElementById('comment').value.trim();
 
-            if (!name) {
-                showToast('⚠️ يرجى كتابة اسمك الكريم', 'error');
-                return;
-            }
+            if (!name) { showToast('⚠️ يرجى كتابة اسمك الكريم', 'error'); return; }
 
             btn.disabled = true;
             btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> جارٍ الإرسال...';
@@ -1596,21 +1053,17 @@
             const payload = { customer_name: name, rating };
             if (comment) payload.review = comment;
 
-            const { error } = await _supabase
-                .from('customer_reviews')
-                .insert([payload]);
+            const { error } = await _supabase.from('customer_reviews').insert([payload]);
 
             btn.disabled = false;
             btn.innerHTML = '<i class="fas fa-paper-plane"></i> إرسال التقييم';
 
             if (error) {
-                console.error('Supabase error:', error);
                 showToast(`❌ خطأ: ${error.message || 'خطأ غير معروف'}`, 'error');
             } else {
                 showToast('✅ شكراً! تم إرسال تقييمك بنجاح.');
                 document.getElementById('customer_name').value = '';
                 document.getElementById('comment').value = '';
-                // Reload both the static section AND dynamic section
                 loadReviews();
                 refreshStaticSection();
             }
@@ -1629,7 +1082,6 @@
 
             if (error) {
                 listDiv.innerHTML = `<div class="loading-state" style="color:#c0392b"><i class="fas fa-exclamation-circle" style="animation:none"></i>تعذّر تحميل التقييمات</div>`;
-                console.error(error);
                 return;
             }
 
@@ -1646,20 +1098,19 @@
                 card.className = 'dynamic-review-card';
                 card.style.animationDelay = `${i * 0.08}s`;
                 card.innerHTML = `
-                <div class="reviewer-meta">
-                    <div class="reviewer-avatar">${escapeHtml(initial)}</div>
-                    <div>
-                        <div class="reviewer-name">${escapeHtml(rev.customer_name)}</div>
-                        <div class="reviewer-stars">${stars}</div>
+                    <div class="reviewer-meta">
+                        <div class="reviewer-avatar">${escapeHtml(initial)}</div>
+                        <div>
+                            <div class="reviewer-name">${escapeHtml(rev.customer_name)}</div>
+                            <div class="reviewer-stars">${stars}</div>
+                        </div>
                     </div>
-                </div>
-                ${rev.review ? `<div class="reviewer-comment">${escapeHtml(rev.review)}</div>` : ''}
-            `;
+                    ${rev.review ? `<div class="reviewer-comment">${escapeHtml(rev.review)}</div>` : ''}
+                `;
                 listDiv.appendChild(card);
             });
         }
 
-        // Also refresh the static testimonials grid with newest reviews from DB
         async function refreshStaticSection() {
             const { data, error } = await _supabase
                 .from('customer_reviews')
@@ -1673,8 +1124,6 @@
             const grid = document.querySelector('.reviews-grid');
             if (!grid) return;
 
-            // Append new cards (keep originals, add dynamic ones)
-            // Remove previously appended dynamic cards
             grid.querySelectorAll('.review-card-dynamic-live').forEach(c => c.remove());
 
             data.forEach(rev => {
@@ -1683,16 +1132,16 @@
                 const card = document.createElement('div');
                 card.className = 'review-card-static review-card-dynamic-live';
                 card.innerHTML = `
-                <div class="review-stars">${stars}</div>
-                <p class="review-text">${escapeHtml(rev.review || 'تقييم رائع!')}</p>
-                <div class="review-author">
-                    <div class="review-avatar">${escapeHtml(initial)}</div>
-                    <div class="review-author-info">
-                        <h4>${escapeHtml(rev.customer_name)}</h4>
-                        <span>عميل </span>
+                    <div class="review-stars">${stars}</div>
+                    <p class="review-text">${escapeHtml(rev.review || 'تقييم رائع!')}</p>
+                    <div class="review-author">
+                        <div class="review-avatar">${escapeHtml(initial)}</div>
+                        <div class="review-author-info">
+                            <h4>${escapeHtml(rev.customer_name)}</h4>
+                            <span>عميل</span>
+                        </div>
                     </div>
-                </div>
-            `;
+                `;
                 grid.appendChild(card);
             });
         }
@@ -1705,7 +1154,6 @@
         loadReviews();
         refreshStaticSection();
 
-        // Real-time subscription: auto-reload when new review added
         _supabase
             .channel('customer_reviews_channel')
             .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'customer_reviews' }, () => {
@@ -1716,5 +1164,4 @@
     </script>
 
 </body>
-
 </html>
